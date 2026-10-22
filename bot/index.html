@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAKHANENKO — Telegram-бот на Python | Лендинг проекта</title>
+<meta name="description" content="Демо-лендинг Telegram-бота на Python + aiogram: меню, FSM-заявка, SQLite, админка. Проект Егора Маханенко.">
+<meta property="og:title" content="MAKHANENKO: Telegram-бот на Python">
+<meta property="og:description" content="Бот на aiogram 3: меню, заявки, SQLite. Заказ бота от 3 000 ₽, срок от 3 дней.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d6ff3f'/%3E%3Ctext x='32' y='44' font-family='Arial,Helvetica,sans-serif' font-size='34' font-weight='900' text-anchor='middle' fill='%230a0a0b'%3EM%3C/text%3E/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress"></div>
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+<div class="noise"></div>
+<header class="header">
+<a href="#top" class="logo">MAKHANENKO<span>.</span></a>
+<div class="header-meta mono">PYTHON · AIOGRAM · SQLITE</div>
+<div class="header-actions">
+<a href="#demo" class="btn-small">Демо</a>
+<a href="#contact" class="btn-small hot">Заказать бота</a>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="hero-top mono">ПРОЕКТ 02 · LANDING-SITE · <span class="dot"></span> PET-PROJECT</div>
+<h1 class="hero-title">
+<span class="line">TG-BOT</span>
+<span class="line hoverline">НА PYTHON</span>
+<span class="line small">принимает заявки <i>пока ты спишь</i></span>
+</h1>
+<div class="hero-bottom">
+<p class="hero-desc">Бот-портфолио на aiogram 3: меню, кнопки, форма заявки из 3 шагов, сохранение в SQLite и уведомление админа. Код открыт на GitHub.</p>
+<div class="hero-cta">
+<a href="#demo" class="btn">Живое демо ↓</a>
+<a href="https://github.com/k3der1/portfolio" class="btn ghost">Код на GitHub ↗</a>
+</div>
+</div>
+<div class="hero-tags mono">AIOGRAM 3 · FSM · SQLITE · .ENV · GITHUB</div>
+</section>
+<div class="ticker" aria-hidden="true">
+<div class="ticker-track">
+<div class="ticker-group"><span>Python</span><span>Aiogram 3</span><span>FSM</span><span>SQLite</span><span>FastAPI</span><span>Парсинг</span><span>Telegram API</span><span>HTML/CSS</span><span>JavaScript</span><span>Git / GitHub</span></div>
+<div class="ticker-group"><span>Python</span><span>Aiogram 3</span><span>FSM</span><span>SQLite</span><span>FastAPI</span><span>Парсинг</span><span>Telegram API</span><span>HTML/CSS</span><span>JavaScript</span><span>Git / GitHub</span></div>
+</div>
+</div>
+<section class="stats">
+<div class="stat reveal"><div class="stat-num"><span data-count="3">0</span> <i>дня</i></div><div class="stat-label mono">от идеи до запуска</div></div>
+<div class="stat reveal"><div class="stat-num"><span data-count="3000">0</span> <i>₽</i></div><div class="stat-label mono">стартовая цена бота</div></div>
+<div class="stat reveal"><div class="stat-num"><span data-count="24">0</span><i>/7</i></div><div class="stat-label mono">бот на связи без выходных</div></div>
+</section>
+<section class="section" id="demo">
+<div class="section-head">
+<span class="mono">01 / ЖИВОЕ ДЕМО</span>
+<h2>Попробуй <i>прямо здесь.</i></h2>
+<p class="section-sub">Это симуляция диалога с ботом — те же 3 шага, что и в настоящем Telegram-боте. Введи данные и посмотри, как сохраняется заявка.</p>
+</div>
+<div class="demo-grid">
+<div class="phone reveal">
+<div class="phone-top"><span></span>MAKHANENKO Bot · online</div>
+<div class="chat" id="chat">
+<div class="msg bot">Привет! Я — бот Егора Маханенко. Делаю сайты и Telegram-ботов 👋<br><br>Выбери раздел:</div>
+<div class="chat-btns">
+<button data-a="about">Обо мне</button>
+<button data-a="skills">Навыки</button>
+<button data-a="projects">Проекты</button>
+<button data-a="lead">Оставить заявку</button>
+</div>
+</div>
+<div class="chat-input">
+<input id="chatText" placeholder="Сообщение…" maxlength="200">
+<button id="chatSend">→</button>
+</div>
+</div>
+<div class="demo-info reveal">
+<h3>Что внутри?</h3>
+<ul>
+<li><b>/start</b> — меню с кнопками</li>
+<li><b>Форма заявки</b> — имя → контакт → задача</li>
+<li><b>SQLite</b> — заявки хранятся в leads.db</li>
+<li><b>/leads</b> — админ смотрит заявки</li>
+<li><b>.env</b> — токен не лежит в коде</li>
+</ul>
+<div class="stack mono">PYTHON · AIOGRAM 3 · FSM · SQLITE</div>
+</div>
+</div>
+</section>
+<section class="section" id="features">
+<div class="section-head">
+<span class="mono">02 / ВОЗМОЖНОСТИ</span>
+<h2>Что умеет <i>бот.</i></h2>
+</div>
+<div class="cards">
+<article class="card c1 reveal"><div class="card-num">01</div><h3>Меню и команды</h3><p>/start /about /skills /projects /contact /help. Кнопки + инлайн-ссылки на сайт и GitHub.</p></article>
+<article class="card c2 reveal"><div class="card-num">02</div><h3>Заявка за 3 шага</h3><p>FSM: имя → контакт → задача. Отмена по /cancel. Проверка пустых ответов.</p></article>
+<article class="card reveal"><div class="card-num">03</div><h3>База + админка</h3><p>SQLite: leads.db. Команда /leads только для админа. Уведомление о новой заявке в личку.</p></article>
+</div>
+</section>
+<section class="section" id="code">
+<div class="section-head">
+<span class="mono">03 / КОД</span>
+<h2>Как это <i>устроено.</i></h2>
+</div>
+<div class="code-win reveal">
+<div class="code-bar"><span class="tl"></span><span class="tl"></span><span class="tl"></span><span class="mono">bot.py · aiogram 3</span></div>
+<pre class="code"><code><span class="d">@router.message(CommandStart())</span>
+<span class="k">async def</span> <span class="f">cmd_start</span>(msg: Message, state: FSMContext):
+    <span class="k">await</span> state.clear()
+    <span class="k">await</span> msg.answer(<span class="s">"Привет! Я — бот-портфолио..."</span>,
+                     reply_markup=main_kb())
+
+<span class="d">@router.message(LeadForm.task)</span>
+<span class="k">async def</span> <span class="f">lead_task</span>(msg: Message, state: FSMContext):
+    data = <span class="k">await</span> state.get_data()
+    lid = db_save(data[<span class="s">"name"</span>], data[<span class="s">"contact"</span>],
+                  msg.text, msg.from_user.username)
+    <span class="k">await</span> msg.answer(<span class="s">f"Готово, заявка #{lid} сохранена!"</span>)</code></pre>
+</div>
+<div class="code-links">
+<a href="https://github.com/k3der1/portfolio" class="btn-small">Весь код — на GitHub ↗</a>
+<span class="mono">bot.py · ~230 строк · aiogram 3</span>
+</div>
+</section>
+<section class="section" id="faq">
+<div class="section-head">
+<span class="mono">04 / ВОПРОСЫ</span>
+<h2>Частые <i>вопросы.</i></h2>
+</div>
+<div class="faq-list">
+<details class="faq reveal">
+<summary>Сколько времени займёт мой бот?<span class="plus">+</span></summary>
+<p>Простой бот с заявками: от 3 дней. С каталогом, рассылкой или онлайн-оплатой: одна-две недели. Точный срок назову, как только расскажешь задачу.</p>
+</details>
+<details class="faq reveal">
+<summary>Что нужно от меня на старте?<span class="plus">+</span></summary>
+<p>Просто опиши задачу своими словами: кто будет пользоваться ботом и что он должен делать. Тексты, логотип и доступы соберём по ходу.</p>
+</details>
+<details class="faq reveal">
+<summary>Как проходит оплата?<span class="plus">+</span></summary>
+<p>50% перед началом работы и 50% после сдачи. Для крупных проектов можно поэтапно. Работаю по договорённости, договор и чек — по запросу.</p>
+</details>
+<details class="faq reveal">
+<summary>А если бот сломается после запуска?<span class="plus">+</span></summary>
+<p>Две недели после сдачи исправляю баги бесплатно, дальше поддержка по договорённости. Бот живёт на твоём хостинге и твоём токене, так что ты ни к чему не привязан.</p>
+</details>
+</div>
+</section>
+<section class="section contact" id="contact">
+<div class="section-head">
+<span class="mono">05 / ЗАКАЗАТЬ</span>
+<h2>Нужен такой <i>бот?</i></h2>
+</div>
+<div class="contact-grid">
+<div class="contact-info reveal">
+<div class="avail mono"><span class="dot"></span>ОТВЕЧАЮ ЗА 1-2 ЧАСА</div>
+<p>Сделаю бота или сайт под твою задачу: заявки, запись, каталог, рассылка. Срок — от 3 дней, цена — от 3 000 ₽.</p>
+<div class="calc">
+<div class="calc-title mono">МИНИ-КАЛЬКУЛЯТОР ПРОЕКТА</div>
+<div class="calc-chips">
+<button type="button" class="chip" data-price="2000">Каталог +2 000 ₽</button>
+<button type="button" class="chip" data-price="1500">Рассылка +1 500 ₽</button>
+<button type="button" class="chip" data-price="3000">Онлайн-оплата +3 000 ₽</button>
+<button type="button" class="chip" data-price="1500">Админ-панель +1 500 ₽</button>
+<button type="button" class="chip" data-price="1000">Хостинг и запуск +1 000 ₽</button>
+</div>
+<div class="calc-out">Бот с меню и заявкой: от <b id="calcSum">3 000</b> ₽ · срок <span id="calcDays">3-5</span> дней</div>
+</div>
+<a class="contact-big" href="https://github.com/k3der1">github.com/k3der1</a>
+<a class="contact-big" href="https://k3der1.github.io/portfolio/">k3der1.github.io/portfolio/</a>
+</div>
+<form class="contact-form reveal" id="leadForm">
+<label>Имя<input id="fName" placeholder="Как обращаться" required></label>
+<label>Контакт<input id="fContact" placeholder="Telegram / телефон" required></label>
+<label>Задача<textarea id="fTask" rows="3" placeholder="Бот для записи клиентов…" required></textarea></label>
+<button class="btn" type="submit">Оставить заявку</button>
+<p class="form-note mono" id="formNote">Демо-форма: сохраняет в localStorage браузера.</p>
+</form>
+</div>
+</section>
+</main>
+<footer class="footer mono">
+<span>© 2026 ЕГОР МАХАНЕНКО · PROJECT 02</span>
+<span>БЕЗ КОНСТРУКТОРОВ · ЧИСТЫЙ КОД</span>
+<a href="#top">НАВЕРХ ↑</a>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
